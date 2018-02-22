@@ -1,5 +1,5 @@
 class KitchensController < ApplicationController
-before_action :set_kitchen, only [:show, :edit, :destroy]
+before_action :set_kitchen, only: [:show, :edit, :destroy]
 
   def index
     @kitchens = Kitchen.all
