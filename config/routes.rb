@@ -6,6 +6,13 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
-  patch "/bookings/:id/decline", to: "bookings#decline", as: :decline_booking
-  patch "/bookings/:id/approve", to: "bookings#approve", as: :approve_booking
+  resources :bookings, only: [:destroy] do
+    member do
+      patch 'decline'
+      patch 'approve'
+    end
+  end
+
+  # patch "/bookings/:id/decline", to: "bookings#decline", as: :decline_booking
+  # patch "/bookings/:id/approve", to: "bookings#approve", as: :approve_booking
 end
