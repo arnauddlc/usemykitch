@@ -5,14 +5,22 @@
 		<p><%= @kitchen.description %></p>
 	</div>
 </div>
-<div class="container">
-	
+<div>
+<div class="container details-show-kitchen">
+		<div class="info">
+			<h2>More info</h2>
+			<p>Price: <%= @kitchen.price %>$/day</p>
 
-	<%= link_to new_kitchen_booking_path(@kitchen) do %>
-	<div class="btn btn-success">Book</div>
-	<% end %>
-	<br>
-	<%= link_to "back to more kitchens", kitchens_path %>
+			<%= link_to new_kitchen_booking_path(@kitchen) do %>
+			<div class="btn btn-success">Book</div>
+			<% end %>
+		</div>
+		<div class="map">
+			<p>placeholder for map</p>
+		</div>
 </div>
-
+<div class="container">
+	<p><%= link_to "back to more kitchens", kitchens_path %></p>
+</div>
+	
 

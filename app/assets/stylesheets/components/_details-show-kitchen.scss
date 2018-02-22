@@ -1,0 +1,19 @@
+.details-show-kitchen {
+	padding: 15px;
+	display: flex;
+	justify-content: space-between;
+
+	.info {
+		display: block;
+		min-width: 350px;
+	}
+
+	.map {
+		min-width: 350px;
+		min-width: 50%;
+		min-height: 300px;
+		flex: 0 1 0;
+		background-color: gray;
+	}
+}
+
