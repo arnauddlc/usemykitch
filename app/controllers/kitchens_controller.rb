@@ -1,5 +1,5 @@
 class KitchensController < ApplicationController
-before_action :set_kitchen, only: [:show, :edit, :destroy]
+before_action :set_kitchen, only: [:show, :edit, :update, :destroy]
 
   def index
     @kitchens = Kitchen.all
@@ -23,6 +23,15 @@ before_action :set_kitchen, only: [:show, :edit, :destroy]
   end
 
   def edit
+  end
+
+  def update
+    @kitchen.update(kitchen_params)
+    if @kitchen.save
+      redirect_to kitchen_path(@kitchen)
+    else
+      render :edit
+    end
   end
 
   def destroy
