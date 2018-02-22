@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :kitchens
   has_many :bookings
-  # has_many :kitchens, through: :bookings
+  has_many :bookings, through: :kitchens
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
