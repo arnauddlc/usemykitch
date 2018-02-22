@@ -1,4 +1,15 @@
-<h1>Kitchens#show</h1>
-<p>Find me in app/views/kitchens/show.html.erb</p>
+<div class="banner">
+	<h1><%= @kitchen.title %></h1>
+	<p><%= @kitchen.description %></p>
+</div>
+<div class="container">
+	
 
-<%= link_to "Book", new_kitchen_booking_path(@kitchen) %>
+	<%= link_to new_kitchen_booking_path(@kitchen) do %>
+	<div class="btn">Book</div>
+	<% end %>
+	<br>
+	<%= link_to "back to more kitchens", kitchens_path %>
+</div>
+
+
