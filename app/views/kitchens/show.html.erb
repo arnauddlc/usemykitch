@@ -1,12 +1,15 @@
-<div class="banner">
-	<h1><%= @kitchen.title %></h1>
-	<p><%= @kitchen.description %></p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path @kitchen.picture, crop: :fill %>')">
+	<div class="container">
+		<h1><%= @kitchen.title %></h1>
+		<p><%= @kitchen.description %></p>
+	</div>
 </div>
 <div class="container">
 	
 
 	<%= link_to new_kitchen_booking_path(@kitchen) do %>
-	<div class="btn">Book</div>
+	<div class="btn btn-success">Book</div>
 	<% end %>
 	<br>
 	<%= link_to "back to more kitchens", kitchens_path %>
