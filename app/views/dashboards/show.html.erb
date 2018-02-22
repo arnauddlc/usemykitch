@@ -1,0 +1,21 @@
+<div class="container">
+	<h1>My Dashboard</h1>
+	<h2>Bookings I have requested</h2>
+	<ul>
+		<% @bookings_sent.each do |booking| %>
+		<li><%= "#{booking.start_date} | #{booking.end_date} | Kitchen: #{booking.kitchen.title} | Price: #{booking.total_price} | #{booking.status}" %></li>
+		<% end %>
+	</ul>
+	<h2>My kitchens</h2>
+	<ul>
+		<% @kitchens.each do |kitchen| %>
+		<li><%= kitchen.title %></li>
+		<% end %>
+	</ul>
+	<h2>Bookings for my kitchens</h2>
+	<ul>
+		<% @bookings_received.each do |booking| %>
+		<li><%= "#{booking.start_date} | #{booking.end_date} | Kitchen: #{booking.kitchen.title} | Price: #{booking.total_price} | #{booking.status}" %></li>
+		<% end %>
+	</ul>
+</div>
