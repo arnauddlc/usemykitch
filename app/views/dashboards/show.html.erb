@@ -3,7 +3,7 @@
 	<h2>Bookings I have requested</h2>
 	<ul>
 		<% @bookings_sent.each do |booking| %>
-		<li><%= "#{booking.start_date} | #{booking.end_date} | Kitchen: #{booking.kitchen} | Price: #{booking.total_price} | #{booking.status}" %></li>
+		<li><%= "#{booking.start_date} | #{booking.end_date} | Kitchen: #{booking.kitchen.title} | Price: #{booking.total_price} | #{booking.status}" %></li>
 		<% end %>
 	</ul>
 	<h2>My kitchens</h2>
@@ -15,7 +15,7 @@
 	<h2>Bookings for my kitchens</h2>
 	<ul>
 		<% @bookings_received.each do |booking| %>
-		<li><%= "#{booking.start_date} | #{booking.end_date} | Kitchen: #{booking.kitchen} | Price: #{booking.total_price} | #{booking.status}" %></li>
+		<li><%= "#{booking.start_date} | #{booking.end_date} | Kitchen: #{booking.kitchen.title} | Price: #{booking.total_price} | #{booking.status}" %></li>
 		<% end %>
 	</ul>
 </div>
