@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get "/dashboard", to: 'dashboards#show', as: :show_dashboard
+
   # patch "/bookings/:id/decline", to: "bookings#decline", as: :decline_booking
   # patch "/bookings/:id/approve", to: "bookings#approve", as: :approve_booking
 end
