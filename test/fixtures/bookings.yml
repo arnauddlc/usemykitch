@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2018-02-22 13:33:33
+  end_date: 2018-02-22 13:33:33
+  total_price: 1
+  status: MyString
+  user: one
+  kitchen: one
+
+two:
+  start_date: 2018-02-22 13:33:33
+  end_date: 2018-02-22 13:33:33
+  total_price: 1
+  status: MyString
+  user: two
+  kitchen: two
