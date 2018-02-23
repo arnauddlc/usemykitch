@@ -1,14 +1,48 @@
-<div class="container">
-  <h1>Kitchens</h1>
-  <% @kitchens.each do |kitchen| %>
-    <ul>
-      <li>
-        <%= kitchen.title %>
-        <%= kitchen.description %>
-        <%= kitchen.address %>
-        <%= kitchen.price %>
-      </li>
-    </ul>
-  <% end %>
-  <%= link_to "Add kitchen", new_kitchen_path %>
+<div class="main-container">
+  <div class="container">
+    <div class="row">
+      <div class="main-intro">
+        <h2>Use My Kitch</h2>
+        <p>Channel your inner Nigella </p>
+      </div>
+      <% @kitchens.each do |kitchen| %>
+        <div class="col-xs-12 col-md-6">
+          <div class="card">
+            <div class="card-img-cover">
+              <img class="card-img-top" src="https://a0.muscache.com/im/pictures/29585ff8-8776-43a3-a8d7-c43afb30adbe.jpg?aki_policy=large" alt="">
+            </div>
+            <div class="body">
+              <div class="card-title">
+                <%= link_to kitchen.title, kitchen_path(kitchen) %>
+              </div>
+              <div class="card-price">
+                <p>From $<%= kitchen.price %>,- per day</p>
+              </div>
+            </div>
+          </div>
+          <a class="card-link" href="#"></a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div id="map"></div>
 </div>
+  <!-- Gmaps js: building the map -->
+  <script>
+    function initMap() {
+      // Create a map object and specify the DOM element for display.
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 52.5206, lng: 13.4098},
+        scrollwheel: false,
+        zoom: 8
+      });
+    }
+  </script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Gmaps JavaScript -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
+  </script>
