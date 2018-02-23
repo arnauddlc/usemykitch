@@ -59,7 +59,7 @@
       <div class="col-xs-12 col-md-3">
         <div class="card">
           <div class="card-img-cover">
-            <img class="card-img-top" src="https://a0.muscache.com/im/pictures/29585ff8-8776-43a3-a8d7-c43afb30adbe.jpg?aki_policy=large" alt="">
+            <%= cl_image_tag kitchen.picture, height: 200, width: 280, crop: :scale %>
           <div class="body">
             <div class="card-title">
               <%= link_to truncate(kitchen.title, length: 20), kitchen_path(kitchen) %>
