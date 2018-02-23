@@ -1,0 +1,15 @@
+.main-container {
+  display: flex;
+}
+#map {
+  flex: 0 0 450px;
+  height: calc(100vh - 70px);
+  position: sticky !important;
+}
+.main-intro {
+  padding: 20px;
+  margin-top: 20px;
+  p, h2 {
+    margin: 0;
+  }
+}
