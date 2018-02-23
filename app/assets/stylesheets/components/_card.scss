@@ -1,0 +1,28 @@
+.card {
+  background: #FAFAFA;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 10px 0;
+  // height: 175px;
+  // text-align: center;
+  a {
+    color: #484848;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bolder;
+  }
+}
+.card-img-top {
+  width: 100%;
+  // border-top-left-radius: calc(.25rem - 1px);
+  // border-top-right-radius: calc(.25rem - 1px);
+}
+.card .body {
+  padding: 10px;
+}
+.card-price p {
+  color: #484848;
+  font-size: 18px;
+  font-weight: lighter;
+  margin: 0;
+}
