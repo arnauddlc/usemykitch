@@ -20,6 +20,7 @@ before_action :set_kitchen, only: [:show, :edit, :update, :destroy]
   end
 
   def show
+    @booking = Booking.new
   end
 
   def edit
