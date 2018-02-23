@@ -3,8 +3,6 @@
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   margin: 10px 0;
-  // height: 175px;
-  // text-align: center;
   a {
     color: #484848;
     text-decoration: none;
@@ -12,10 +10,11 @@
     font-weight: bolder;
   }
 }
-.card-img-top {
+.card-image {
   width: 100%;
-  // border-top-left-radius: calc(.25rem - 1px);
-  // border-top-right-radius: calc(.25rem - 1px);
+  height: 250px;
+  background-size: cover !important;
+  background-position: center;
 }
 .card .body {
   padding: 10px;
