@@ -1,0 +1,41 @@
+.inbox {
+  padding: 0;
+}
+.message {
+  display: flex;
+  margin: 10px;
+  padding: 20px;
+  background-color: $medium-dark-gray;
+  color: $light-gray;
+}
+.message-body {
+  width: 60%;
+}
+.message-price {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.message-status, .dropdown {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+#approved {
+  color: $green;
+}
+#declined {
+  color: $red;
+}
+#pending {
+  color: $yellow;
+}
+.message-body-date {
+  display: flex;
+}
+.message-body-date-start {
+  padding-right: 30px;
+}
