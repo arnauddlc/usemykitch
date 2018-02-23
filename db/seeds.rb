@@ -25,7 +25,7 @@ puts "5 users created and saved!"
 	user = User.find(rand(1..5))
 	title = Faker::StarWars.character
 	description ="Lorem ipsum dolor amet leggings taiyaki jean shorts pabst actually authentic vape green juice PBR&B. Truffaut iPhone actually, stumptown organic before they sold out biodiesel next level sustainable. Offal farm-to-table quinoa shoreditch organic la croix, YOLO air plant etsy. Aesthetic enamel pin taiyaki pok pok. Mlkshk listicle keytar vexillologist. Franzen thundercats ugh affogato pug, tilde deep v meditation pork belly taxidermy synth. Adaptogen echo park hell of squid affogato vaporware banjo af. Vice af portland venmo tumeric gluten-free cardigan pork belly tattooed."
-	address = Faker::Address.street_address
+	address = Faker::Address.street_address + " " + Faker::Address.city
 	new_kitchen = Kitchen.new(user: user, price: price, picture: image_url, address: address, title: title, description: description )
 	if new_kitchen.save
 		puts "#{new_kitchen.title} has been created and saved"
