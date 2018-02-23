@@ -23,17 +23,51 @@
 		<% end %>
 	</ul>
 
-	<h2>My Kitchens</h2>
-	<ul>
+  <div class="row">
+    <div class="main-intro">
+	    <h2>My Kitchens</h2>
+    </div>
+
 		<% @kitchens.each do |kitchen| %>
-		<li><%= kitchen.title %></li>
-		<% end %>
-	</ul>
+      <div class="col-xs-12 col-md-3">
+        <div class="card">
+          <div class="card-img-cover">
+            <img class="card-img-top" src="https://a0.muscache.com/im/pictures/29585ff8-8776-43a3-a8d7-c43afb30adbe.jpg?aki_policy=large" alt="">
+          <div class="body">
+            <div class="card-title">
+              <%= link_to truncate(kitchen.title, length: 20), kitchen_path(kitchen) %>
+            </div>
+            <div class="card-price">
+              <p>From $<%= kitchen.price %>,- per day</p>
+            </div>
+          </div>
+          </div>
+          <a class="card-link" href="#"></a>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
 	<h2>Bookings for my Kitchens</h2>
 	<ul>
 		<% @bookings_received.each do |booking| %>
-		<li><%= "#{booking.start_date.strftime('%b %d, %Y')} | #{booking.end_date.strftime('%b %d, %Y')} | Kitchen: #{booking.kitchen.title} | Price: #{booking.total_price} | #{booking.status}" %></li>
+		<li>
+      <div>
+        <%= booking.start_date.strftime('%b %d, %Y') %>
+      </div>
+      <div>
+        <%= booking.end_date.strftime('%b %d, %Y') %>
+      </div>
+      <div>
+        <%= "Kitchen: #{booking.kitchen.title}" %>
+      </div>
+      <div>
+        <%= "Price: #{booking.total_price}" %>
+      </div>
+      <div>
+        <%= booking.status %>
+      </div>
+    </li>
 		<% end %>
 	</ul>
 </div>
