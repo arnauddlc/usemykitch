@@ -1,13 +1,13 @@
-<div class="container">
-  <%= simple_form_for([@kitchen, @booking]) do |f| %>
+<div class="container" id="booking-form">
+  <%= simple_form_for([@kitchen, @booking], remote: true) do |f| %>
+    <%= f.error :user_id %>
     <%= f.input :start_date, as: :date, start_year: Date.today.year, end_year: Date.today.year + 2, start_month: Date.today.month, start_day: Date.today.mday, order: [:day, :month, :year]%>
     <%= f.input :end_date, default: Date.today + 1, as: :date, start_year: Date.today.year, end_year: Date.today.year + 2, start_month: Date.today.month , order: [:day, :month, :year]%>
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-		  Book
-		</button>
+		<%= f.submit class: "btn btn-primary" %>
+    <% end %>
 </div>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -15,15 +15,14 @@
         <h4 class="modal-title" id="myModalLabel">Please confirm your booking</h4>
       </div>
       <div class="modal-body">
-        <!-- <p>You are about to book the kitchen starting <= @booking.start_date %> for <= @booking.end_date - @booking.end_date %> days</p>
-        <p>The total cost of this booking will be <= @booking.total_price %>$</p> -->
+       <p>You are about to book the kitchen starting <= @booking.start_date %> for <= @booking.end_date - @booking.end_date %> days</p>
+        <p>The total cost of this booking will be <= @booking.total_price %>$</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-		    <%= f.submit class: "btn btn-success"%>
-		  	<% end %>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Confirm booking</button>
       </div>
-  <!-- Button trigger modal -->
     </div>
   </div>
-</div>
+</div> -->
+

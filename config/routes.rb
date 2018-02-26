@@ -12,7 +12,11 @@ Rails.application.routes.draw do
       patch 'decline'
       patch 'approve'
     end
+    collection  do
+      get 'confirm_booking'
+    end
   end
+
 
   get "/dashboard", to: 'dashboards#show', as: :show_dashboard
 

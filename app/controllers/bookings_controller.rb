@@ -11,11 +11,27 @@ class BookingsController < ApplicationController
     @booking.kitchen = @kitchen
     @booking.user = current_user
     @booking.total_price = calculate_total_price
-    if @booking.save
-      redirect_to kitchen_path(@kitchen)
+    if @booking.valid?
+      respond_to do |format|
+        format.html
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
+  end
+
+  def confirm_booking
+    @booking = Booking.new(booking_params)
+    @kitchen = Kitchen.find(params[:booking][:kitchen_id])
+    @booking.kitchen = @kitchen
+    @booking.user = current_user
+    @booking.total_price = calculate_total_price
+    @booking.save
+    redirect_to kitchen_path(@booking.kitchen)
   end
 
   def approve
