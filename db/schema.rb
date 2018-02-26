@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180224081855) do
     t.string "title"
     t.text "description"
     t.string "address"
-    t.string "picture", default: "http://res.cloudinary.com/arnauddlc/image/upload/o_55/v1519290830/kitchen_std.webp"
+    t.string "picture"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
