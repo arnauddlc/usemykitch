@@ -6,6 +6,9 @@
   height: 100vh;
   position: sticky !important;
   top: 0 !important;
+  border-color: $light-gray;
+  border-style: solid;
+  border-width: 30px 30px 0 15px;
   // height: calc(100vh - 90px);
   // right: 0 !important;
 }
