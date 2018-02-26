@@ -1,0 +1,24 @@
+<div class="row">
+  <% @kitchens.each do |kitchen| %>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card">
+
+        <%= link_to kitchen_path(kitchen) do %>
+          <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path kitchen.picture %>')">
+          </div>
+        <% end %>
+
+        <div class="body">
+          <div class="card-title">
+            <%= link_to truncate(kitchen.title, length: 20), kitchen_path(kitchen) %>
+          </div>
+          <div class="card-price">
+            <p>From $<%= kitchen.price %>,- per day</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  <% end %>
+
+</div>

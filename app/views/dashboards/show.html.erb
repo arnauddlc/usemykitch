@@ -4,125 +4,25 @@
   	<h1>My Dashboard</h1>
 
   	<h2>Bookings I have requested</h2>
-    <ul class="inbox">
-      <% @bookings_sent.each do |booking| %>
-    		<li class="message">
-
-          <div class="message-body">
-
-            <div class="message-body-host">
-              <p>Host: <%= booking.kitchen.user.email %></p>
-            </div>
-
-            <div class="message-body-title">
-              <p>Kitchen: <%= booking.kitchen.title %></p>
-            </div>
-
-            <div class="message-body-date">
-              <div class="message-body-date-start">
-                <p>From: <%= booking.start_date.strftime('%b %d, %Y') %></p>
-              </div>
-
-              <div class="message-body-date-end">
-                <p>To: <%= booking.end_date.strftime('%b %d, %Y') %></p>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="message-price">
-            <p>$<%= booking.total_price %></p>
-          </div>
-
-          <% if booking.status == "approved" %>
-            <div class="message-status" id="approved">
-              <p><%= booking.status %></p>
-            </div>
-          <% elsif booking.status == "declined" %>
-            <div class="message-status" id="declined">
-              <p><%= booking.status %></p>
-            </div>
-          <% else %>
-            <div class="message-status" id="pending">
-              <p><%= booking.status %></p>
-            </div>
-          <% end %>
-
-        </li>
-      <% end %>
-    </ul>
+    <% if @bookings_sent.empty? %>
+      <%= "You have not booked any kitchens." %>
+    <% else %>
+      <%= render 'bookingfromme' %>
+    <% end %>
 
     <h2>My Kitchens</h2>
-    <div class="row">
-  		<% @kitchens.each do |kitchen| %>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="card">
-
-            <%= link_to kitchen_path(kitchen) do %>
-              <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path kitchen.picture %>')">
-              </div>
-            <% end %>
-
-            <div class="body">
-              <div class="card-title">
-                <%= link_to truncate(kitchen.title, length: 20), kitchen_path(kitchen) %>
-              </div>
-              <div class="card-price">
-                <p>From $<%= kitchen.price %>,- per day</p>
-              </div>
-            </div>
-
-          </div>
-
-          </div>
-        <% end %>
-
-    </div>
+    <% if @kitchens.empty? %>
+      <%= "You don't have any kitchens." %>
+    <% else %>
+      <%= render 'mykitch' %>
+    <% end %>
 
   	<h2>Bookings for my Kitchens</h2>
-    <ul class="inbox">
-      <% @bookings_received.each do |booking| %>
-        <li class="message">
+    <% if @bookings_received.empty? %>
+      <%= "None of your kitchens is booked." %>
+    <% else %>
+      <%= render 'bookingforme' %>
+    <% end %>
 
-          <div class="message-body">
-
-            <div class="message-body-guest">
-              <p>Host: <%= booking.user.email %></p>
-            </div>
-
-            <div class="message-body-title">
-              <p>Kitchen: <%= booking.kitchen.title %></p>
-            </div>
-
-            <div class="message-body-date">
-              <div class="message-body-date-start">
-                <p>From: <%= booking.start_date.strftime('%b %d, %Y') %></p>
-              </div>
-
-              <div class="message-body-date-end">
-                <p>To: <%= booking.end_date.strftime('%b %d, %Y') %></p>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="message-price">
-            <p>$<%= booking.total_price %></p>
-          </div>
-
-          <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              <%= booking.status %>
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><%= link_to "Approved", approve_booking_path(booking), method: :patch %></li>
-              <li><%= link_to "Declined", decline_booking_path(booking), method: :patch %></li>
-            </ul>
-          </div>
-
-        </li>
-      <% end %>
-    </ul>
   </div>
 </div>

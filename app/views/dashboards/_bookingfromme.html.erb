@@ -1,0 +1,47 @@
+<ul class="inbox">
+  <% @bookings_sent.each do |booking| %>
+    <li class="message">
+
+      <div class="message-body">
+
+        <div class="message-body-host">
+          <p>Host: <%= booking.kitchen.user.email %></p>
+        </div>
+
+        <div class="message-body-title">
+          <p>Kitchen: <%= booking.kitchen.title %></p>
+        </div>
+
+        <div class="message-body-date">
+          <div class="message-body-date-start">
+            <p>From: <%= booking.start_date.strftime('%b %d, %Y') %></p>
+          </div>
+
+          <div class="message-body-date-end">
+            <p>To: <%= booking.end_date.strftime('%b %d, %Y') %></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="message-price">
+        <p>$<%= booking.total_price %></p>
+      </div>
+
+      <% if booking.status == "approved" %>
+        <div class="message-status" id="approved">
+          <p><%= booking.status %></p>
+        </div>
+      <% elsif booking.status == "declined" %>
+        <div class="message-status" id="declined">
+          <p><%= booking.status %></p>
+        </div>
+      <% else %>
+        <div class="message-status" id="pending">
+          <p><%= booking.status %></p>
+        </div>
+      <% end %>
+
+    </li>
+  <% end %>
+</ul>
