@@ -1,44 +1,7 @@
 <ul class="inbox">
   <% @bookings_received.each do |booking| %>
-    <li class="message">
-
-      <div class="message-body">
-
-        <div class="message-body-guest">
-          <p>Host: <%= booking.user.email %></p>
-        </div>
-
-        <div class="message-body-title">
-          <p>Kitchen: <%= booking.kitchen.title %></p>
-        </div>
-
-        <div class="message-body-date">
-          <div class="message-body-date-start">
-            <p>From: <%= booking.start_date.strftime('%b %d, %Y') %></p>
-          </div>
-
-          <div class="message-body-date-end">
-            <p>To: <%= booking.end_date.strftime('%b %d, %Y') %></p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="message-price">
-        <p>$<%= booking.total_price %></p>
-      </div>
-
-      <div class="dropdown-dashboard">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          <%= booking.status %>
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><%= link_to "Approved", approve_booking_path(booking), method: :patch %></li>
-          <li><%= link_to "Declined", decline_booking_path(booking), method: :patch %></li>
-        </ul>
-      </div>
-
+    <li class="message" data-booking-id="<%= booking.id %>">
+      <%= render 'bookings/show', booking: booking %>
     </li>
   <% end %>
 </ul>

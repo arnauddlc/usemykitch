@@ -38,7 +38,10 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "approved"
     if @booking.save
-      redirect_to show_dashboard_path
+      respond_to do |format|
+        format.html {redirect_to show_dashboard_path}
+        format.js { render :update }
+      end
     end
   end
 
@@ -46,7 +49,10 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "declined"
     if @booking.save
-      redirect_to show_dashboard_path
+      respond_to do |format|
+        format.html {redirect_to show_dashboard_path}
+        format.js { render :update }
+      end
     end
   end
 

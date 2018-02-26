@@ -27,4 +27,8 @@ class Booking < ApplicationRecord
   		errors.add(:user_id, "you cannot book your own kitchen!")
   	end
   end
+
+  def approved?
+    self.status == "approved"
+  end
 end
