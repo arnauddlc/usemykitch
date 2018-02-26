@@ -4,15 +4,15 @@ function onPlaceChanged() {
 
   var kitchenAddress = document.getElementById('kitchen_address');
   kitchenAddress.blur();
-  kitchenAddress.value = components.address;
+  // kitchenAddress.value = components.address;
 
-  document.getElementById('kitchen_zip_code').value = components.zip_code;
-  document.getElementById('kitchen_city').value = components.city;
+  // document.getElementById('kitchen_zip_code').value = components.zip_code;
+  // document.getElementById('kitchen_city').value = components.city;
 
-  if (components.country_code) {
-    var selector = '#kitchen_country option[value="' + components.country_code + '"]';
-    document.querySelector(selector).selected = true;
-  }
+  // if (components.country_code) {
+  //   var selector = '#kitchen_country option[value="' + components.country_code + '"]';
+  //   document.querySelector(selector).selected = true;
+  // }
 }
 
 function getAddressComponents(place) {
