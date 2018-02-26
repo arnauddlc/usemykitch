@@ -2,7 +2,13 @@ class KitchensController < ApplicationController
 before_action :set_kitchen, only: [:show, :edit, :update, :destroy]
 
   def index
-    @kitchens = Kitchen.all
+    # @kitchens = Kitchen.all
+    @kitchens = Kitchen.where.not(latitude: nil, longitude: nil)
+    @hash = Gmaps4rails.build_markers(@kitchens) do |kitchen, marker|
+      marker.lat kitchen.latitude
+      marker.lng kitchen.longitude
+      # marker.infowindow render_to_string(partial: "/kitchens/map_box", locals: { kitchen: kitchen })
+    end
   end
 
   def new
