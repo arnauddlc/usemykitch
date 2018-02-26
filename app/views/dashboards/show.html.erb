@@ -4,13 +4,25 @@
   	<h1>My Dashboard</h1>
 
   	<h2>Bookings I have requested</h2>
-    <%= render 'bookingfromme' %>
+    <% if @bookings_sent.empty? %>
+      <%= "You have not booked any kitchens." %>
+    <% else %>
+      <%= render 'bookingfromme' %>
+    <% end %>
 
     <h2>My Kitchens</h2>
-    <%= render 'mykitch' %>
+    <% if @kitchens.empty? %>
+      <%= "You don't have any kitchens." %>
+    <% else %>
+      <%= render 'mykitch' %>
+    <% end %>
 
   	<h2>Bookings for my Kitchens</h2>
-    <%= render 'bookingforme' %>
+    <% if @bookings_received.empty? %>
+      <%= "None of your kitchens is booked." %>
+    <% else %>
+      <%= render 'bookingforme' %>
+    <% end %>
 
   </div>
 </div>
