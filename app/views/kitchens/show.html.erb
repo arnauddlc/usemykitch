@@ -5,8 +5,8 @@
 <div class="container details-show-kitchen">
 		<div class="info">
 			<h1><%= @kitchen.title %></h1>
-			<h4><%= @kitchen.description %></h4>
-			<p>Price: <%= @kitchen.price %>$/day</p>
+			<p><%= @kitchen.description %></p>
+			<p><em>Price: <%= @kitchen.price %>$/day</em></p>
 
 			<p><% if @kitchen.booked_before?(current_user) %><p>
 				<p>You already have booked this kitchen. <%= link_to "Check your dashboard.", show_dashboard_path %></p>
@@ -18,7 +18,7 @@
 			<%= render 'bookings/form'  %>
 		</div>
 </div>
-<div class="container">
+<div class="container details-show-kitchen">
 	<p><%= link_to "back to more kitchens", kitchens_path %></p>
 </div>
 
