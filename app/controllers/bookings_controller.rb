@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to kitchen_path(@kitchen)
     else
-      render :new
+      render 'kitchens/show'
     end
   end
 
