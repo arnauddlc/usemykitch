@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
     @booking.kitchen = @kitchen
     @booking.user = current_user
     @booking.total_price = calculate_total_price
-    byebug
     if @booking.valid?
       respond_to do |format|
         format.html
