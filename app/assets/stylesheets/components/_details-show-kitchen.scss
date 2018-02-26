@@ -1,7 +1,6 @@
 .details-show-kitchen {
 	padding: 15px;
 	display: flex;
-	justify-content: space-between;
 
 	.info {
 		display: block;
@@ -16,13 +15,17 @@
 		min-width: 50%;
 		min-height: 300px;
 		flex: 0 1 0;
-		background-color: #e8e8e8;
+		background-color: #efefef;
 		border-radius: 4px;
 
 		h4 {
 			padding-bottom: 30px;
     	padding-left: 15px;
 		}
+	}
+
+	a {
+		padding-left: 15px;
 	}
 }
 
