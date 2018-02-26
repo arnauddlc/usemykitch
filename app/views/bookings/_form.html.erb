@@ -3,7 +3,7 @@
     <%= f.error :user_id %>
     <%= f.input :start_date, as: :date, start_year: Date.today.year, end_year: Date.today.year + 2, start_month: Date.today.month, start_day: Date.today.mday, order: [:day, :month, :year]%>
     <%= f.input :end_date, default: Date.today + 1, as: :date, start_year: Date.today.year, end_year: Date.today.year + 2, start_month: Date.today.month , order: [:day, :month, :year]%>
-		<%= f.button :submit, class: "btn btn-default" %>
+		<%= f.submit class: "btn btn-primary" %>
     <% end %>
 </div>
 
