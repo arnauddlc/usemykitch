@@ -47,7 +47,7 @@
   border-radius: 5px;
   // font-weight: lighter;
   // opacity: 0.8;
-  text-decoration: none;
+  // text-decoration: none;
   transition: all 0.25s ease;
 }
 .navbar-button-green:hover {
@@ -98,4 +98,7 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+.fa-bars:before {
+  color: white;
 }
