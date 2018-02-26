@@ -8,7 +8,7 @@
 require 'faker'
 
 add1 = "42 Queen St. Nassau, the Bahamas"
-add2 = "American Embassy in Brasilia, Brazil"
+add2 = "American Embassy in Brasilia"
 add3 = "Carrera 45 No. 24B-27 Bogotá, D.C. Colombia"
 add4 = "91 Vasilisis Sophias Avenue, Athens, Greece"
 add5 = "United Nations Avenue Nairobi 00621 Nairobi, Kenya"
