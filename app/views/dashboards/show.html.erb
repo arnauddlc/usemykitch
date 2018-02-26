@@ -30,25 +30,23 @@
 
           </div>
 
-          <div class="message-right"></div>
-            <div class="message-price">
-              <p>$<%= booking.total_price %></p>
-            </div>
-
-            <% if booking.status == "approved" %>
-              <div class="message-status" id="approved">
-                <p><%= booking.status %></p>
-              </div>
-            <% elsif booking.status == "declined" %>
-              <div class="message-status" id="declined">
-                <p><%= booking.status %></p>
-              </div>
-            <% else %>
-              <div class="message-status" id="pending">
-                <p><%= booking.status %></p>
-              </div>
-            <% end %>
+          <div class="message-price">
+            <p>$<%= booking.total_price %></p>
           </div>
+
+          <% if booking.status == "approved" %>
+            <div class="message-status" id="approved">
+              <p><%= booking.status %></p>
+            </div>
+          <% elsif booking.status == "declined" %>
+            <div class="message-status" id="declined">
+              <p><%= booking.status %></p>
+            </div>
+          <% else %>
+            <div class="message-status" id="pending">
+              <p><%= booking.status %></p>
+            </div>
+          <% end %>
 
         </li>
       <% end %>
