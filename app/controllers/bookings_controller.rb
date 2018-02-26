@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.total_price = calculate_total_price
     if @booking.valid?
-      
+      redirect_to kitchen_path(@kitchen)
     else
       render 'kitchens/show'
     end
