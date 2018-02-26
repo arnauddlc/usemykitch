@@ -40,3 +40,23 @@
 .message-body-date-start {
   padding-right: 30px;
 }
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .message {
+    display: block;
+  }
+  .message-body {
+    width: 100%;
+    font-size: 12px;
+    word-wrap: break-word;
+  }
+  .message-price, .message-status {
+    width: 100%;
+    font-size: 12px;
+    border-left: 0;
+    justify-content: left;
+  }
+  .dropdown {
+    justify-content: right;
+  }
+}
