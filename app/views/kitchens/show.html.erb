@@ -9,7 +9,7 @@
 			<p>Price: <%= @kitchen.price %>$/day</p>
 
 			<p><% if @kitchen.booked_before?(current_user) %><p>
-				<p>You already have booked this kitchen. <%= link_to "Check your dashboard.", to: show_dashboard_path %></p>
+				<p>You already have booked this kitchen. <%= link_to "Check your dashboard.", show_dashboard_path %></p>
 			<% end %>
 
 		</div>
