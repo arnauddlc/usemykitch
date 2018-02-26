@@ -11,8 +11,8 @@ class BookingsController < ApplicationController
     @booking.kitchen = @kitchen
     @booking.user = current_user
     @booking.total_price = calculate_total_price
-    if @booking.save
-      redirect_to kitchen_path(@kitchen)
+    if @booking.valid?
+      
     else
       render 'kitchens/show'
     end
