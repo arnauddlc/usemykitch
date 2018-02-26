@@ -11,12 +11,18 @@
 
 	.book-box {
 		padding: 15px;
+		margin-top: 25px;
 		min-width: 350px;
 		min-width: 50%;
 		min-height: 300px;
 		flex: 0 1 0;
-		background-color: gray;
+		background-color: #e8e8e8;
 		border-radius: 4px;
+
+		h4 {
+			padding-bottom: 30px;
+    	padding-left: 15px;
+		}
 	}
 }
 
