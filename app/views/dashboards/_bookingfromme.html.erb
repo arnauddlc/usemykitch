@@ -4,12 +4,14 @@
 
       <div class="message-body">
 
-        <div class="message-body-host">
-          <p>Host: <%= booking.kitchen.user.email %></p>
+        <div class="message-body-title">
+          <%= link_to kitchen_path(booking.kitchen) do %>
+          <p><strong>Kitchen: <%= booking.kitchen.title %></strong></p>
+          <% end %>
         </div>
 
-        <div class="message-body-title">
-          <p>Kitchen: <%= booking.kitchen.title %></p>
+        <div class="message-body-host">
+          <p>Host: <%= booking.kitchen.user.email %></p>
         </div>
 
         <div class="message-body-date">

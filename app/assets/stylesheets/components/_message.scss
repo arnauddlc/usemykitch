@@ -3,10 +3,21 @@
 }
 .message {
   display: flex;
-  margin: 10px;
+  margin: 10px 0;
   padding: 20px;
   background-color: $medium-dark-gray;
   color: $light-gray;
+  border-radius: 3px;
+
+  p {
+    margin: 0;
+    padding: 5px 0;
+  }
+
+  a {
+    font-weight: bolder;
+    color: white;
+  }
 }
 .message-body {
   width: 60%;
