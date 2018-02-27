@@ -2,12 +2,12 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :kitchen
 
-  validates :start_date, presence: true
-  validates :end_date, presence: true
-  validates :user_id, presence: true
-  validates :kitchen_id, presence: true
+  validates :start_date, presence: true, on: :create
+  validates :end_date, presence: true, on: :create
+  validates :user_id, presence: true, on: :create
+  validates :kitchen_id, presence: true, on: :create
 
-  validate :start_must_be_today_or_after, :end_must_be_after_start_date, :user_must_not_be_owner
+  validate :start_must_be_today_or_after, :end_must_be_after_start_date, :user_must_not_be_owner, on: :create
   # scope :received_bookings, -> { .where('kitchen_id = ?', ) }
 
   def start_must_be_today_or_after

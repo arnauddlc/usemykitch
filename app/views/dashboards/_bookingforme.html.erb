@@ -1,7 +1,7 @@
 <ul class="inbox">
   <% @bookings_received.each do |booking| %>
     <li class="message" data-booking-id="<%= booking.id %>">
-      <%= render 'bookings/bookingcontent', booking: booking %>
+      <%= render 'bookings/show', booking: booking %>
     </li>
   <% end %>
 </ul>
