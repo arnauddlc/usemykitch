@@ -21,7 +21,7 @@
     margin-bottom: 0px;
   }
 }
-.message-status, #dropdown-dashboard {
+.message-status, #booking-decision {
   width: 20%;
   display: flex;
   flex-direction: column;
@@ -31,6 +31,13 @@
   p {
     margin-bottom: 0px;
   }
+  #decline-message {
+    margin-left: 20px;
+    font-size: 10px;
+  }
+}
+#booking-decision {
+  justify-content: space-around;
 }
 #approved {
   color: $green;
@@ -47,6 +54,9 @@
 .message-body-date-start {
   padding-right: 30px;
 }
+.btn {
+  width: 100px;
+}
 @media (max-width: 540px) {
   /* For a screen < 540px, this CSS will be read */
   .message {
@@ -59,14 +69,21 @@
   }
   .message-price, .message-status {
     width: 100%;
+    flex-direction: row;
     font-size: 12px;
     border-left: 0;
     justify-content: left;
     p {
     margin-bottom: 12.5px;
+    }
   }
+  .for-me {
+    flex-direction: column;
+    align-items: left;
   }
-  #dropdown-dashboard {
+  #booking-decision {
     justify-content: right;
+    width: 100%;
+    border-left: 0;
   }
 }
