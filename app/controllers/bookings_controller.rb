@@ -63,6 +63,6 @@ class BookingsController < ApplicationController
   end
 
   def calculate_total_price
-    (@booking.end_date - @booking.start_date) * @kitchen.price
+    (@booking.end_date - @booking.start_date) / 3_600 / 24 * @kitchen.price
   end
 end

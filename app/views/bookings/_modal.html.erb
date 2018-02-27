@@ -6,8 +6,10 @@
         <h4 class="modal-title" id="myModalLabel">Please confirm your booking</h4>
       </div>
       <div class="modal-body">
-       <p>You are about to book the kitchen starting <%= booking.start_date %> for <%= booking.end_date - booking.end_date %> days</p>
-        <p>The total cost of this booking will be <%= booking.total_price %>$</p>
+       <p>You are about to book <%= booking.kitchen.title  %></p>
+       <p><i class="far fa-calendar-alt"></i>  starting <%= booking.start_date.strftime("%A, %b %d (%Y)") %></p>
+       <p><i class="far fa-clock"></i>  for <%= pluralize(((booking.end_date - booking.start_date)/3600/24).round, "day") %></p>
+        <p><strong>The total cost of this booking will be $ <%= booking.total_price %></strong></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
