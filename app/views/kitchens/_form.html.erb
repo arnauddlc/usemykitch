@@ -1,13 +1,10 @@
-<div class="container">
-  <%= simple_form_for(@kitchen) do |f| %>
-    <%= f.input :title, placeholder: 'eg. Mario Pizza Hut' %>
-    <%= f.input :description, placeholder: 'eg. your neighborhood fire pizza kitchen'%>
-    <%= f.input :address, placeholder: 'eg. 225 Camelback Rd, London, UK' %>
-    <%= f.input :price, placeholder: '30'%>
-    <%= f.input :picture %>
-    <%= f.input :picture_cache, as: :hidden %>
-    <%= f.submit %>
-  <% end %>
-</div>
-
+<%= simple_form_for(@kitchen) do |f| %>
+  <%= f.input :title, placeholder: "eg. Sébastien's Sun Soaked Kitchen" %>
+  <%= f.input :description, placeholder: 'eg. Island kitchen in the center of Paris'%>
+  <%= f.input :address, placeholder: 'eg. 16 Villa Gaudelet, 75011 Paris, France' %>
+  <%= f.input :price, placeholder: '75'%>
+  <%= f.input :picture %>
+  <%= f.input :picture_cache, as: :hidden %>
+  <%= f.button :submit, class: "btn btn-primary margin-bottom margin-top" %>
+<% end %>
 
