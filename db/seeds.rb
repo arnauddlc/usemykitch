@@ -7,37 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-add1 = "Kerobokan Kelod, Badung Regency, Bali, Indonesia"
-lat1 = -8.654085
-long1 = 115.1282793
+add1 = "41 Rue de la Lune, Paris, France"
 
-add2 = "24/3 Wylde Street, Potts Point NSW, Australia"
-lat2 = -33.8661864
-long2 = 151.222422
+add2 = "139b Bethnal Green Road, London, UK"
 
-add3 = "United Nations Plaza, New York, NY, USA"
-lat3 = 40.7449191
-long3 = -73.9795298
+add3 = "55 Hugh Street, London, UK"
 
 add4 = "Leoforos Vasilissis Sofias 91, Athens, Greece"
-lat4 = 37.9820397
-long4 = 23.7532603
 
-add5 = "United Nations Avenue, Nairobi, Kenya"
-lat5 = -1.2346464
-long5 = 36.8119658
+add5 = "Berlin Central Station, Europaplatz, Berlin, Germany"
 
-add6 = "Canberra ACT, Australia"
-lat6 = -35.3063954
-long6 = 149.1141395
+add6 = "16 Passage de la Folie-Regnault, Paris, France"
 
-add7 = "Medellin, Antioquia, Colombia"
-lat7 = 6.1845115
-long7 = -75.6132881
+add7 = "39 Avenue Pierre 1er de Serbie, Paris, France"
 
-add8 = "Jalan Jakarta No.10110, RT.1/RW.3, Gelora, Central Jakarta City, Jakarta, Indonesia"
-lat8 = -6.1805659
-long8 = 106.8285411
+add8 = "13 Rue de Lyon, Chazelles-sur-Lyon, France"
 
 add = [add1, add2, add3, add4, add5, add6, add7, add8]
 
@@ -65,8 +49,7 @@ i = 1
 	# Faker::Address.street_address + " " + Faker::Address.city
 	new_kitchen = Kitchen.new(user: user, price: price, address: address, title: title, description: description )
 	new_kitchen.remote_picture_url = image_path;
-	# new_kitchen.latitude = "long#{i}".to_f
-	# new_kitchen.longitude = "lat#{i}".to_f
+
 	if new_kitchen.save
 		puts "#{new_kitchen.title} has been created and saved"
 	end

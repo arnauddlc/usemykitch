@@ -1,5 +1,6 @@
 class KitchensController < ApplicationController
-before_action :set_kitchen, only: [:show, :edit, :update, :destroy, :like]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_kitchen, only: [:show, :edit, :update, :destroy]
 
   def index
     # @kitchens = Kitchen.all
