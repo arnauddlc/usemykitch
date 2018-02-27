@@ -1,0 +1,7 @@
+
+function updateBooking(bookingHtml) {
+  const booking = document.querySelector("[data-booking-id='<%= @booking.id %>']")
+  booking.innerHTML = bookingHtml
+};
+
+updateBooking("<%= j render 'show', booking: @booking %>");

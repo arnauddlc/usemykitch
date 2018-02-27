@@ -1,0 +1,40 @@
+<div class="message-body">
+
+  <div class="message-body-guest">
+    <p>Host: <%= booking.user.email %></p>
+  </div>
+
+  <div class="message-body-title">
+    <p>Kitchen: <%= booking.kitchen.title %></p>
+  </div>
+
+  <div class="message-body-date">
+    <div class="message-body-date-start">
+      <p>From: <%= booking.start_date.strftime('%b %d, %Y') %></p>
+    </div>
+
+    <div class="message-body-date-end">
+      <p>To: <%= booking.end_date.strftime('%b %d, %Y') %></p>
+    </div>
+  </div>
+
+</div>
+
+<div class="message-price">
+  <p>$<%= booking.total_price %></p>
+</div>
+<div class="message-status">
+  <p><%= booking.status %></p>
+</div>
+
+
+<div class="dropdown" id="dropdown-dashboard">
+  <% if booking.approved? %>
+  <%= link_to "Decline", decline_booking_path(booking), method: :patch, class: "btn btn-danger", remote: true %>
+  <% else %>
+  <%= link_to "Approve", approve_booking_path(booking), method: :patch, class: "btn btn-success", remote: true  %>
+  <% end %>
+
+</div>
+
+
