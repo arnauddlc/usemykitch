@@ -1,0 +1,18 @@
+
+function renderModal(modalHtml) {
+	const modal = document.getElementById('confirm-booking');
+	modal.innerHTML = modalHtml
+}
+
+function refreshForm(innerHTML) {
+  const bookingForm = document.getElementById('booking-form');
+  bookingForm.innerHTML = innerHTML;
+}
+
+<% if @booking.errors.any? %>
+  refreshForm('<%= j render "bookings/form", kitchen: @kitchen, booking: @booking %>');
+<% else %>
+	 renderModal('<%= j render "bookings/modal", booking: @booking %>');
+	$('#myModal').modal();
+  refreshForm('<%= j render "bookings/form", kitchen: @kitchen, booking: Booking.new %>');
+<% end %>
