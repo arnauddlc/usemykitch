@@ -23,16 +23,33 @@
 <div class="message-price">
   <p>$<%= booking.total_price %></p>
 </div>
-<div class="message-status">
-  <p><%= booking.status %></p>
-</div>
+
+<% if booking.status == "approved" %>
+  <div class="message-status for-me" id="approved">
+    <i class="fas fa-check"></i>
+    <p><%= booking.status %></p>
+  </div>
+<% elsif booking.status == "declined" %>
+  <div class="message-status for-me" id="declined">
+    <i class="fas fa-times"></i>
+    <p><%= booking.status %></p>
+  </div>
+<% else %>
+  <div class="message-status for-me" id="pending">
+    <i class="fas fa-question"></i>
+    <p><%= booking.status %></p>
+  </div>
+<% end %>
 
 
-<div class="dropdown" id="dropdown-dashboard">
+<div class="dropdown" id="booking-decision">
   <% if booking.approved? %>
-  <%= link_to "Decline", decline_booking_path(booking), method: :patch, class: "btn btn-danger", remote: true %>
+    <%= link_to "Decline", decline_booking_path(booking), method: :patch, class: "btn btn-danger", remote: true %>
+  <% elsif booking.declined? %>
+    <p id="decline-message">You have declined this request.</p>
   <% else %>
-  <%= link_to "Approve", approve_booking_path(booking), method: :patch, class: "btn btn-success", remote: true  %>
+    <%= link_to "Approve", approve_booking_path(booking), method: :patch, class: "btn btn-success", remote: true  %>
+    <%= link_to "Decline", decline_booking_path(booking), method: :patch, class: "btn btn-danger", remote: true %>
   <% end %>
 
 </div>
