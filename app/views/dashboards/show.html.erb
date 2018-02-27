@@ -3,26 +3,37 @@
 
   	<h2>My Dashboard</h2>
 
-  	<h3>Bookings I have requested</h3>
-    <% if @bookings_sent.empty? %>
-      <%= "You have not booked any kitchens." %>
-    <% else %>
-      <%= render 'bookingfromme' %>
-    <% end %>
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#home">My Bookings</a></li>
+      <li><a data-toggle="tab" href="#menu1">My Kitchens</a></li>
+    </ul>
 
-    <h3>My Kitchens</h3>
-    <% if @kitchens.empty? %>
-      <%= "You don't have any kitchens." %>
-    <% else %>
-      <%= render 'mykitch' %>
-    <% end %>
+    <div class="tab-content">
 
-  	<h3>Bookings for my Kitchens</h3>
-    <% if @bookings_received.empty? %>
-      <%= "None of your kitchens is booked." %>
-    <% else %>
-      <%= render 'bookingforme' %>
-    <% end %>
+    <div id="home" class="tab-pane fade in active">
+    	<h3>Bookings I have requested</h3>
+      <% if @bookings_sent.empty? %>
+        <%= "You have not booked any kitchens." %>
+      <% else %>
+        <%= render 'bookingfromme' %>
+      <% end %>
+    </div>
+
+    <div id="menu1" class="tab-pane fade">
+      <h3>My Kitchens</h3>
+      <% if @kitchens.empty? %>
+        <%= "You don't have any kitchens." %>
+      <% else %>
+        <%= render 'mykitch' %>
+      <% end %>
+
+    	<h3>Bookings for my Kitchens</h3>
+      <% if @bookings_received.empty? %>
+        <%= "None of your kitchens is booked." %>
+      <% else %>
+        <%= render 'bookingforme' %>
+      <% end %>
+    </div>
 
   </div>
 </div>
