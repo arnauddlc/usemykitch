@@ -13,12 +13,16 @@
   // right: 0 !important;
 }
 .main-intro {
-  padding: 20px;
-  margin-top: 20px;
-  p, h2 {
+  padding: 40px 20px 10px 16px;
+  p, h4 {
     margin: 0;
   }
+  p {
+    font-size: 16px;
+    font-weight: lighter;
+  }
 }
+
 
 // @media (max-width: 960px) {
 //   /* For a screen < 960px, this CSS will be read */
