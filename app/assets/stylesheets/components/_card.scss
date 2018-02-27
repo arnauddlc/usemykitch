@@ -3,6 +3,7 @@
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   margin: 10px 0;
+  position: relative;
   a {
     color: #484848;
     text-decoration: none;
@@ -29,4 +30,14 @@
   font-size: 18px;
   font-weight: lighter;
   margin: 0;
+}
+.card-icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 25px;
+  color: $dark-gray;
+}
+.heart-blue {
+ color: $blue;
 }

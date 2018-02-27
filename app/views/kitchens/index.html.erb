@@ -22,6 +22,7 @@
               </div>
               <% end %>
             </div>
+            <i class="fas fa-heart card-icon"></i>
           </div>
           <a class="card-link" href="#"></a>
         </div>
@@ -30,6 +31,27 @@
   </div>
   <div id="map"></div>
 </div>
+
+<script>
+document.querySelectorAll(".card-icon").forEach((icon) => {
+  icon.addEventListener("click", (event) => {
+    event.currentTarget.classList.toggle("heart-blue");
+  });
+});
+</script>
+<!-- id="card-icon" -->
+<!-- <script>
+  !!!!!onclick="myFunction()" # add after card-icon
+
+  function myFunction() {
+    var colorIcon = document.getElementById("card-icon").style.color;
+    if (colorIcon == "black") {
+      document.getElementById("card-icon").style.color = "#30C2FF";
+    } else {
+      document.getElementById("card-icon").style.color = "black";
+    }
+  }
+</script> -->
 
 <!-- Gmaps js: building map with markers -->
 <% content_for(:after_js) do %>
