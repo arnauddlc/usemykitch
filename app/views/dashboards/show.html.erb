@@ -1,23 +1,23 @@
 <div class="container-dashboard">
   <div class="container">
 
-  	<h1>My Dashboard</h1>
+  	<h2>My Dashboard</h2>
 
-  	<h2>Bookings I have requested</h2>
+  	<h3>Bookings I have requested</h3>
     <% if @bookings_sent.empty? %>
       <%= "You have not booked any kitchens." %>
     <% else %>
       <%= render 'bookingfromme' %>
     <% end %>
 
-    <h2>My Kitchens</h2>
+    <h3>My Kitchens</h3>
     <% if @kitchens.empty? %>
       <%= "You don't have any kitchens." %>
     <% else %>
       <%= render 'mykitch' %>
     <% end %>
 
-  	<h2>Bookings for my Kitchens</h2>
+  	<h3>Bookings for my Kitchens</h3>
     <% if @bookings_received.empty? %>
       <%= "None of your kitchens is booked." %>
     <% else %>
