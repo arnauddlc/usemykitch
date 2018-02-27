@@ -5,6 +5,7 @@
   display: flex;
   margin: 10px 0;
   padding: 20px;
+  padding-right: 0;
   background-color: $medium-dark-gray;
   color: $light-gray;
   border-radius: 3px;
@@ -15,7 +16,6 @@
   }
 
   a {
-    font-weight: bolder;
     color: white;
   }
 }
@@ -44,7 +44,7 @@
   }
   #decline-message {
     margin-left: 20px;
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 #booking-decision {
@@ -68,6 +68,25 @@
 .btn-msg {
   width: 100px;
 }
+
+.btn-cancel {
+  font-size: 14px;
+  color: white;
+  border: 1px solid $red;
+  padding: 5px 10px;
+  border-radius: 5px;
+  // font-weight: lighter;
+  // opacity: 0.8;
+  // text-decoration: none;
+  transition: all 0.25s ease;
+  &:hover {
+  // opacity: 1;
+  text-decoration: none;
+  color: $red;
+  }
+}
+
+
 @media (max-width: 540px) {
   /* For a screen < 540px, this CSS will be read */
   .message {
