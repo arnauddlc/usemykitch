@@ -4,8 +4,12 @@
     <%= f.input :start_date, as: :date, start_year: Date.today.year, end_year: Date.today.year + 2, start_month: Date.today.month, start_day: Date.today.mday, order: [:day, :month, :year]%>
     <%= f.input :end_date, default: Date.today + 1, as: :date, start_year: Date.today.year, end_year: Date.today.year + 2, start_month: Date.today.month , order: [:day, :month, :year]%>
     <br>
-		<%= f.submit class: "btn btn-primary" %>
+    <% if user_signed_in? %>
+		  <%= f.submit class: "btn btn-primary" %>
+    <% else %>
+      <p>You must <%= link_to "login", new_user_session_path %> to request a booking</p>
     <% end %>
+  <% end %>
 </div>
 
 <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
