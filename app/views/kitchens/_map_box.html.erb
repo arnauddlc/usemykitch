@@ -1,0 +1,16 @@
+<div class="card-google">
+  <%= link_to kitchen_path(kitchen) do %>
+  <div class="card-image-google">
+    <%= cl_image_tag kitchen.picture, width: "200px" %>
+  </div>
+  <div class="body-google">
+    <div class="card-title-google">
+      <%= kitchen.title %>
+    </div>
+    <div class="card-price-google">
+      From $<%= kitchen.price %> per day
+    </div>
+    <% end %>
+  </div>
+</div>
+

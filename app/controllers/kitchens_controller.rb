@@ -7,7 +7,7 @@ before_action :set_kitchen, only: [:show, :edit, :update, :destroy]
     @hash = Gmaps4rails.build_markers(@kitchens) do |kitchen, marker|
       marker.lat kitchen.latitude
       marker.lng kitchen.longitude
-      # marker.infowindow render_to_string(partial: "/kitchens/map_box", locals: { kitchen: kitchen })
+      marker.infowindow render_to_string(partial: "/kitchens/map_box", locals: { kitchen: kitchen })
     end
   end
 
