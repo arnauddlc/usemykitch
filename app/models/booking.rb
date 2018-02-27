@@ -31,4 +31,8 @@ class Booking < ApplicationRecord
   def approved?
     self.status == "approved"
   end
+
+  def declined?
+    self.status == "declined"
+  end
 end

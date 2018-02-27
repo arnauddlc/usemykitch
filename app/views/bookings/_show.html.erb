@@ -26,14 +26,17 @@
 
 <% if booking.status == "approved" %>
   <div class="message-status" id="approved">
+    <i class="fas fa-check"></i>
     <p><%= booking.status %></p>
   </div>
 <% elsif booking.status == "declined" %>
   <div class="message-status" id="declined">
+    <i class="fas fa-times"></i>
     <p><%= booking.status %></p>
   </div>
 <% else %>
   <div class="message-status" id="pending">
+    <i class="fas fa-question"></i>
     <p><%= booking.status %></p>
   </div>
 <% end %>
@@ -41,9 +44,12 @@
 
 <div class="dropdown" id="dropdown-dashboard">
   <% if booking.approved? %>
-  <%= link_to "Decline", decline_booking_path(booking), method: :patch, class: "btn btn-danger", remote: true %>
+    <%= link_to "Decline", decline_booking_path(booking), method: :patch, class: "btn btn-danger", remote: true %>
+  <% elsif booking.declined? %>
+    <p id="decline-message">You have declined this booking request.</p>
   <% else %>
-  <%= link_to "Approve", approve_booking_path(booking), method: :patch, class: "btn btn-success", remote: true  %>
+    <%= link_to "Approve", approve_booking_path(booking), method: :patch, class: "btn btn-success", remote: true  %>
+    <%= link_to "Decline", decline_booking_path(booking), method: :patch, class: "btn btn-danger", remote: true %>
   <% end %>
 
 </div>
