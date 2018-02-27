@@ -6,10 +6,10 @@
 		<div class="info">
 			<h1><%= @kitchen.title %></h1>
 			<p><%= @kitchen.description %></p>
-			<p><em>Price: <%= @kitchen.price %>$/day</em></p>
+			<p><em>Price: $<%= @kitchen.price %> per day</em></p>
 
-			<p><% if @kitchen.booked_before?(current_user) %><p>
-				<p>You already have booked this kitchen. <%= link_to "Check your dashboard.", show_dashboard_path %></p>
+			<% if @kitchen.booked_before?(current_user) %>
+				<p>You already booked this kitchen. Please check your <%= link_to "dashboard", show_dashboard_path %>.</p>
 			<% end %>
 
 		</div>
@@ -19,9 +19,9 @@
 		</div>
 </div>
 <div class="container details-show-kitchen">
-	<p><%= link_to "back to more kitchens", kitchens_path %></p>
+	<p><%= link_to "back to more kitchens", kitchens_path, class: "margin-left-show" %></p>
 </div>
 
 <div id="confirm-booking"></div>
-	
+
 
